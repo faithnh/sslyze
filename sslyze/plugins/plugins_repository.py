@@ -57,9 +57,9 @@ class PluginsRepository:
     def get_available_commands(self) -> List[Type[PluginScanCommand]]:
         """Get the list of all available scan comands across all plugins.
         """
-        return sorted(set(self._scan_command_classes_to_plugin_classes.keys()))
+        return sorted(set(self._scan_command_classes_to_plugin_classes.keys()), key=lambda x: x.get_title())
 
     def get_available_plugins(self) -> List[Type[Plugin]]:
         """Get the list of all available plugin.
         """
-        return sorted(set(self._scan_command_classes_to_plugin_classes.values()))
+        return sorted(set(self._scan_command_classes_to_plugin_classes.values()), key=lambda x: x.get_title())
