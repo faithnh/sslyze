@@ -19,6 +19,9 @@ class PluginScanCommand(ABC):
         """
         pass
 
+    def __lt__(self, other):
+        return self.__name__ < other.__name__
+
     @classmethod
     @abstractmethod
     def get_title(cls) -> str:
@@ -60,6 +63,9 @@ class PluginScanCommand(ABC):
 class Plugin(ABC):
     """Abstract class to represent one plugin which can implement one multiple PluginScanCommand and PluginScanResult.
     """
+
+    def __lt__(self, other):
+        return self.__name__ < other.__name__
 
     @classmethod
     def get_title(cls) -> str:
