@@ -157,7 +157,7 @@ class CommandLineParser:
         5432: TlsWrappedProtocolEnum.STARTTLS_POSTGRES,
     }
 
-    def __init__(self, available_plugins: Set[Type[Plugin]], sslyze_version: str) -> None:
+    def __init__(self, available_plugins: List[Type[Plugin]], sslyze_version: str) -> None:
         """Generate SSLyze's command line parser.
         """
         self._parser = OptionParser(version=sslyze_version, usage=self.SSLYZE_USAGE)

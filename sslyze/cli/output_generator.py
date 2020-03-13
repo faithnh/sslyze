@@ -23,7 +23,7 @@ class OutputGenerator(ABC):
     @abstractmethod
     def command_line_parsed(
         self,
-        available_plugins: Set[Type[Plugin]],
+        available_plugins: List[Type[Plugin]],
         args_command_list: Any,
         malformed_servers: List[ServerStringParsingError],
     ) -> None:
