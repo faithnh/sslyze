@@ -62,4 +62,4 @@ class PluginsRepository:
     def get_available_plugins(self) -> Set[Type[Plugin]]:
         """Get the list of all available plugin.
         """
-        return sorted(set(_scan_command_classes_to_plugin_classes.values()))
+        return sorted(set(self._scan_command_classes_to_plugin_classes.values()))
