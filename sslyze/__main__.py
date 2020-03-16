@@ -54,7 +54,7 @@ def main() -> None:
         # Maximum one process to not kill the proxy or the connection
         global_scanner = ConcurrentScanner(max_processes_nb=1)
     else:
-        global_scanner = ConcurrentScanner()
+        global_scanner = ConcurrentScanner(max_processes_nb=1)
 
     # Figure out which hosts are up and fill the task queue with work to do
     connectivity_tester = ConcurrentServerConnectivityTester(good_server_list)
